@@ -34,7 +34,7 @@ Vagrant.configure("2") do |config|
 
   if settings["syncfolders"]
     settings["syncfolders"].each do |sf|
-      config.vm.sync_folder sf["host"], sf["guest"],
+      config.vm.synced_folder sf["host"], sf["guest"],
         owner: username,
         group: username,
         mount_options: ["exec,dmode=775,fmode=774"]
