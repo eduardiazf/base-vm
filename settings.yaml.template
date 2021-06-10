@@ -1,0 +1,16 @@
+vm:
+  cpus: 6
+  memory: 4096
+
+user:
+  name: vagrant
+  email: vagrant@vagrant.com
+
+#syncfolders:
+#  - host: <home>
+#    guest: <guest>
+
+#forwardedports:
+#  - host: 3306
+#    guest: 3306
+#    proto: tcp
