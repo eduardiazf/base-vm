@@ -2,3 +2,4 @@
 settings.yaml
 setup/id_rsa
 setup/id_rsa.pub
+setup/.npmrc

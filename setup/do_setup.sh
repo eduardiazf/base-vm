@@ -15,3 +15,6 @@ chown vagrant:vagrant /home/vagrant/.ssh/id_rsa*
 echo -e "Change permission to ssh keys"
 chmod 600 /home/vagrant/.ssh/id_rsa
 chmod 644 /home/vagrant/.ssh/id_rsa.pub
+
+echo -e "Coping npmrc to home"
+cp -r /vagrant/setup/.npmrc /home/vagrant/
