@@ -3,6 +3,7 @@ git config --global user.email $EMAIL
 
 if [ ! -f /vagrant/setup/id_rsa ]; then
     ssh-keygen -b 2048 -t rsa -C $EMAIL -f /vagrant/setup/id_rsa -q -N ""
+    cat /vagrant/setup/id_rsa.pub >> /home/vagrant/.ssh/authorized_keys
 fi
 
 echo -e "Coping ssh keys"
