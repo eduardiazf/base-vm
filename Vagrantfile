@@ -29,7 +29,10 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell" do |s|
     s.name = "Setup Script"
     s.inline = "/bin/bash /home/vagrant/setup/do_setup.sh"
-    s.env = {}
+    s.env = {
+      "USERNAME": user["name"],
+      "EMAIL": user["email"]
+    }
   end
 
   if settings["syncfolders"]
