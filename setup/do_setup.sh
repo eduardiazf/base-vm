@@ -9,5 +9,9 @@ echo -e "Coping ssh keys"
 cp /vagrant/setup/id_rsa /home/vagrant/.ssh/id_rsa
 cp /vagrant/setup/id_rsa.pub /home/vagrant/.ssh/id_rsa.pub
 
-echo -e "Change permissions to ssh keys"
+echo -e "Change owner to ssh keys"
 chown vagrant:vagrant /home/vagrant/.ssh/id_rsa*
+
+echo -e "Change permission to ssh keys"
+chmod 600 /home/vagrant/.ssh/id_rsa
+chmod 644 /home/vagrant/.ssh/id_rsa.pub
