@@ -6,6 +6,9 @@ if [ ! -f /vagrant/setup/id_rsa ]; then
     cat /vagrant/setup/id_rsa.pub >> /home/vagrant/.ssh/authorized_keys
 fi
 
+echo -e "Move zsh configure"
+cp -f /vagrant/setup/.zshrc /home/vagrant
+
 echo -e "Coping ssh keys"
 cp /vagrant/setup/id_rsa /home/vagrant/.ssh/id_rsa
 cp /vagrant/setup/id_rsa.pub /home/vagrant/.ssh/id_rsa.pub
