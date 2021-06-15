@@ -37,10 +37,10 @@ Vagrant.configure("2") do |config|
 
   if settings["syncfolders"]
     settings["syncfolders"].each do |sf|
-      config.vm.synced_folder sf["host"], sf["guest"],
-        owner: username,
-        group: username,
-        mount_options: ["exec,dmode=775,fmode=774"]
+      config.vm.synced_folder sf["host"], sf["guest"], type: sf["type"],
+        ssh_opts_append: "-o Compression=yes -o CompressionLevel=5",
+        sshfs_opts_append: "-o auto_cache -o cache_timeout=115200",
+        disabled: false
     end
   end
 
