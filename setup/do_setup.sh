@@ -25,6 +25,7 @@ chmod 644 /home/vagrant/.ssh/id_rsa.pub
 
 echo -e "Coping npmrc to home"
 cp -r /vagrant/setup/.npmrc /home/vagrant/
+sudo chown -R vagrant:vagrant /home/vagrant/.npm*
 
 echo -e "Installing brew"
 if [ ! -f /home/vagrant/.linuxbrew/Homebrew/bin/brew ]; then
