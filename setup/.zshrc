@@ -112,3 +112,6 @@ export NVM_DIR="$HOME/.nvm"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
+
+# Brew
+eval $(/home/vagrant/.linuxbrew/bin/brew shellenv)

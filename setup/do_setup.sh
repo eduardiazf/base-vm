@@ -1,3 +1,6 @@
+apt-get update -y
+apt-get install build-essential procps curl file git -y
+
 git config --global user.name $USERNAME
 git config --global user.email $EMAIL
 
@@ -22,3 +25,11 @@ chmod 644 /home/vagrant/.ssh/id_rsa.pub
 
 echo -e "Coping npmrc to home"
 cp -r /vagrant/setup/.npmrc /home/vagrant/
+
+echo -e "Installing brew"
+if [ ! -f /home/vagrant/.linuxbrew/Homebrew/bin/brew ]; then
+  git clone https://github.com/Homebrew/brew /home/vagrant/.linuxbrew/Homebrew
+  mkdir /home/vagrant/.linuxbrew/bin
+  chown -R vagrant:vagrant /home/vagrant/.linuxbrew
+  ln -Fs /home/vagrant/.linuxbrew/Homebrew/bin/brew /home/vagrant/.linuxbrew/bin
+fi
