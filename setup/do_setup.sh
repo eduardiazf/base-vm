@@ -4,10 +4,14 @@ apt-get install build-essential procps curl file git -y
 git config --global user.name $USERNAME
 git config --global user.email $EMAIL
 
+
 if [ ! -f /vagrant/setup/id_rsa ]; then
     ssh-keygen -b 2048 -t rsa -C $EMAIL -f /vagrant/setup/id_rsa -q -N ""
     cat /vagrant/setup/id_rsa.pub >> /home/vagrant/.ssh/authorized_keys
 fi
+
+echo -e "Moving to home directory"
+cd /home/vagrant
 
 echo -e "Move zsh configure"
 cp -f /vagrant/setup/.zshrc /home/vagrant
@@ -34,3 +38,8 @@ if [ ! -f /home/vagrant/.linuxbrew/Homebrew/bin/brew ]; then
   chown -R vagrant:vagrant /home/vagrant/.linuxbrew
   ln -Fs /home/vagrant/.linuxbrew/Homebrew/bin/brew /home/vagrant/.linuxbrew/bin
 fi
+
+echo -e "Install Google Cloud SDK"
+curl -sSLO https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-345.0.0-linux-x86_64.tar.gz
+tar xvzf /home/vagrant/google-cloud-sdk-345.0.0-linux-x86_64.tar.gz
+./google-cloud-sdk/install.sh
