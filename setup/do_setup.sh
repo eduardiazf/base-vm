@@ -41,5 +41,5 @@ fi
 
 echo -e "Install Google Cloud SDK"
 curl -sSLO https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-345.0.0-linux-x86_64.tar.gz
-tar xvzf /home/vagrant/google-cloud-sdk-345.0.0-linux-x86_64.tar.gz
+tar xvzf /home/vagrant/google-cloud-sdk-345.0.0-linux-x86_64.tar.gz && rm -f google-cloud-sdk-345.0.0-linux-x86_64.tar.gz
 ./google-cloud-sdk/install.sh
