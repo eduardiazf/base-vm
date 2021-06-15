@@ -9,6 +9,7 @@ user:
 #syncfolders:
 #  - host: <home>
 #    guest: <guest>
+#    type: "sshfs"
 
 #forwardedports:
 #  - host: 3306
