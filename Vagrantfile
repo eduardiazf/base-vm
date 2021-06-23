@@ -11,6 +11,7 @@ username = "vagrant"
 Vagrant.configure("2") do |config|
   config.vm.box = "eduardiazf/base-vbox"
 
+  config.vm.disk :disk, size: "40GB", primary: true
   config.vm.provision "file", source: "./setup", destination: "/home/vagrant/setup"
 
   config.vm.provision "fix-no-tty", type: "shell" do |s|
