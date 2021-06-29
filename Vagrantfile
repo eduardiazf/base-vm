@@ -28,8 +28,9 @@ Vagrant.configure("2") do |config|
   end
 
   config.vm.provision "shell" do |s|
+    s.privileged = false
     s.name = "Setup Script"
-    s.inline = "/bin/bash /home/vagrant/setup/do_setup.sh"
+    s.inline = "sudo -u vagrant /bin/bash /home/vagrant/setup/do_setup.sh"
     s.env = {
       "USERNAME": user["name"],
       "EMAIL": user["email"]
