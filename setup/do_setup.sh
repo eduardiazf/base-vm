@@ -46,8 +46,8 @@ tar xvzf /home/vagrant/google-cloud-sdk-345.0.0-linux-x86_64.tar.gz && rm -f goo
 chown -R vagrant:vagrant google-cloud-sdk
 
 echo -e "Install mongodb"
-curl https://www.mongodb.org/static/pgp/server-4.0.asc | sudo apt-key add -
-echo "deb http://repo.mongodb.org/apt/debian stretch/mongodb-org/4.0 main" > /etc/apt/sources.list.d/mongodb-org-4.0.list
-apt-get update -y
-apt-get install -y mongodb-org
-systemctl enable mongod
+#curl https://www.mongodb.org/static/pgp/server-4.0.asc | sudo apt-key add -
+#echo "deb http://repo.mongodb.org/apt/debian stretch/mongodb-org/4.0 main" > /etc/apt/sources.list.d/mongodb-org-4.0.list
+#apt-get update -y
+#apt-get install -y mongodb-org
+#systemctl enable mongod
