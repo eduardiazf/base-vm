@@ -51,3 +51,10 @@ echo -e "Install mongodb"
 #apt-get update -y
 #apt-get install -y mongodb-org
 #systemctl enable mongod
+
+echo -e "Install Docker Compose"
+sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+
+echo -e "Install Mysql Client"
+sudo apt install mysql-client -y

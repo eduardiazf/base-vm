@@ -12,7 +12,7 @@ Vagrant.configure("2") do |config|
   config.vm.box = "eduardiazf/base-vbox"
 
   config.vm.network "public_network", ip: "10.0.0.99"
-  config.vm.disk :disk, size: "40GB", primary: true
+  config.vm.disk :disk, size: "60GB", primary: true
 
   config.vm.provision "file", source: "./setup", destination: "/home/vagrant/setup"
 
